@@ -8,4 +8,6 @@ class MessagesController < ApplicationController
     render json: Message.create(username: params.fetch(:username), text: params.fetch(:text))
   end
 
+  def
+
 end
