@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
   # get "messages/:id", to: "todos#show"
-  get "messages", to: "todos#index"
-  post "messages", to: "todos#create"
+  get "messages", to: "messages#index"
+  post "messages", to: "messages#create"
 
 
 
