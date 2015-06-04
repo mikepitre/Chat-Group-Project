@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  # get "messages/:id", to: "todos#show"
+  get "messages", to: "todos#index"
+  post "messages", to: "todos#create"
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
