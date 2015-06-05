@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   def index
-    render json: Message.all
+    render json: Message.all.select { |message| message.created_at > (Time.now - 300) }
   end
 
   def create
@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
     leaders = Hash[leaders]
     render json: leaders
   end
+
 
 
 end
