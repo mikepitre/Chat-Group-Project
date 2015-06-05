@@ -14,6 +14,10 @@ class MessagesController < ApplicationController
     render json: leaders
   end
 
+  def recent_users
+    recent_messages = Message.all.select { |message| message.created_at > (Time.now - 14400) }
+    render json: recent_messages
 
+  end
 
 end
