@@ -9,7 +9,8 @@ class MessagesController < ApplicationController
   end
 
   def leaderboard
-    leaders = Message.all.group(:username).count.sort_by { |username, count| count }.last(10).reverse.to_h
+    leaders = Message.all.group(:username).count.sort_by { |username, count| count }.last(10).reverse
+    leaders = Hash[leaders]
     render json: leaders
   end
 
