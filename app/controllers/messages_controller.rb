@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    render json: Message.create(username: params.fetch(:username), text: params.fetch(:text), text: params.fetch(:chatroom))
+    render json: Message.create(username: params.fetch(:username), text: params.fetch(:text), chatroom: params.fetch(:chatroom))
   end
 
   def leaderboard
