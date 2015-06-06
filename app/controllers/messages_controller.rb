@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    render json: Message.create(username: params.fetch(:username), text: params.fetch(:text), chatroom: params.fetch(:chatroom))
+    render json: Message.create(username: params.fetch(:username), text: Swearjar.default.censor(params.fetch(:text)), chatroom: params.fetch(:chatroom))
   end
 
   def leaderboard
@@ -19,10 +19,7 @@ class MessagesController < ApplicationController
   end
 
   def recent_users
-    each_user = Message.all.group(:username).select { |message| message.created_at > (Time.now - 14400) }
-    recent_users_group = []
-    each_user.map { |message| recent_users_group.push message.username }
-    render json: recent_users_group
+    render json: Message.all.group(:username).select { |message| message.created_at > (Time.now - 14400) }
   end
 
   def active_chatrooms
