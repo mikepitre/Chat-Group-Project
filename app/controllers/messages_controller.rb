@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   def index
-    render json: Message.all.select { |message| message.created_at > (Time.now - 300) }
+    render json: Message.all
   end
 
   def room_messages
