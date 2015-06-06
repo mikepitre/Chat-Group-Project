@@ -30,6 +30,4 @@ class MessagesController < ApplicationController
     render json: chatrooms
   end
 
-
-
 end
