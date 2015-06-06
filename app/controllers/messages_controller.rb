@@ -17,7 +17,12 @@ class MessagesController < ApplicationController
   def recent_users
     recent_messages = Message.all.select { |message| message.created_at > (Time.now - 14400) }
     render json: recent_messages
+  end
 
+  def active_chatrooms
+    chatrooms = Message.all.group(:chatroom).count.sort_by { |chatroom, count| count }.last(10).reverse
+    chatrooms = Hash[chatrooms]
+    render json: chatrooms
   end
 
 end
