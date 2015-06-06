@@ -15,8 +15,10 @@ class MessagesController < ApplicationController
   end
 
   def recent_users
-    recent_messages = Message.all.select { |message| message.created_at > (Time.now - 14400) }
-    render json: recent_messages
+    each_user = Message.all.group(:username).select { |message| message.created_at > (Time.now - 14400) }
+    recent_users_group = []
+    each_user.map { |message| recent_users_group.push message.username }
+    render json: recent_users_group
   end
 
   def active_chatrooms
