@@ -4,6 +4,10 @@ class MessagesController < ApplicationController
     render json: Message.all.select { |message| message.created_at > (Time.now - 300) }
   end
 
+  def room_messages
+    render json: Message.where(chatroom: params[:chatroom]).select { |message| message.created_at > (Time.now - 300) }
+  end
+
   def create
     render json: Message.create(username: params.fetch(:username), text: params.fetch(:text), chatroom: params.fetch(:chatroom))
   end
@@ -26,5 +30,7 @@ class MessagesController < ApplicationController
     chatrooms = Hash[chatrooms]
     render json: chatrooms
   end
+
+
 
 end

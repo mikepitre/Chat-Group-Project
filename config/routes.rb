@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "messages/leaderboard", to: "messages#leaderboard"
   get "messages/recent_users", to: "messages#recent_users"
   get "messages/active_chatrooms", to: "messages#active_chatrooms"
+  get "messages/:chatroom", to: "messages#room_messages"
   get "messages", to: "messages#index"
   post "messages", to: "messages#create"
 
