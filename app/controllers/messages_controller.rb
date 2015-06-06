@@ -27,4 +27,8 @@ class MessagesController < ApplicationController
     render json: chatrooms
   end
 
+  def not_found
+   render json: { message: 'Requested route not found' }, status: 404
+  end
+
 end

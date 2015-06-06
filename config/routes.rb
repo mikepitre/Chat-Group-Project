@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "messages", to: "messages#index"
   post "messages", to: "messages#create"
 
-
+  match '*not_found_route', to: 'application#skip_cors', via: [:get, :post, :put, :delete]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
