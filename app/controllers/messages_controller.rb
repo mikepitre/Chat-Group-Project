@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
   end
 
   def recent_users
-    recent = Message.all.group(:username, :id).select { |message| message.created_at > (Time.now - 14400)}.group_by {|username, value| username.username}
+    recent = Message.all.group(:username, :id).select { |message| message.created_at > (Time.now - 14400)}.group_by {|username, value| username.username}.map { |arr| arr.first }
     render json: recent
   end
 
