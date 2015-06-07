@@ -1,6 +1,7 @@
 Backend of Warm Meadow Chat App
 ===============================
 
+The app can accessed: http://rdaly1490.github.io/Chatroom/dist/index.html
 
 * An API exposes a wesbite's data so that it can easily be consumed by the person requesting it. In order to do this, we have rendered out data in json.
 
