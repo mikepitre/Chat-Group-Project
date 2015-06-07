@@ -44,7 +44,7 @@ class MessagesController < ApplicationController
       when "how are you?"
         Message.create(username: "Chatbot", text: "Same as always, I'm a chatbot", chatroom: 4)
       else
-        Message.create(username: "Chatbot", text: "I'm a stupid chatbot. Try 'Hi', 'How are you?' or 'do you love me? ;)", chatroom: 4)
+        Message.create(username: "Chatbot", text: "I'm a stupid chatbot. Try 'Hi', 'How are you?' or 'do you love me?' ;)", chatroom: 4)
       end
     end
   end
