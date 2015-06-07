@@ -30,4 +30,8 @@ class MessagesController < ApplicationController
     render json: chatrooms
   end
 
+  def profile
+    render json: Message.where(username: params[:username])
+  end
+
 end

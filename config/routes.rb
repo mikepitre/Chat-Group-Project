@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   get "messages/recent_users", to: "messages#recent_users"
   get "messages/active_chatrooms", to: "messages#active_chatrooms"
   get "messages/:chatroom", to: "messages#room_messages"
+  get "messages/profile/:username", to: "messages#profile"
   get "messages", to: "messages#index"
   post "messages", to: "messages#create"
 
-  match '*not_found_route', to: 'application#skip_cors', via: [:get, :post, :put, :delete]
+  match '*not_found_route', to: 'application#not_found', via: [:get, :post, :put, :delete]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
