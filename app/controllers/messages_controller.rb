@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   end
 
   def room_messages
-    render json: Message.where(chatroom: params[:chatroom]).select { |message| message.created_at > (Time.now - 300) }
+    render json: Message.where(chatroom: params[:chatroom]).select { |message| message.created_at > (Time.now - 300) } #change Time.now to username.created_at?
   end
 
   def create

@@ -18,3 +18,13 @@ recently active users:  get "https://warm-meadow-2141.herokuapp.com/messages/rec
 * all messages sent by a specific username:  get "https://warm-meadow-2141.herokuapp.com/messages/profile/:username"
 * all messages history:  get "https://warm-meadow-2141.herokuapp.com/messages"
 * create a new message:  post "https://warm-meadow-2141.herokuapp.com/messages"
+
+
+Hackpad
+========
+https://hackpad.com/Team-Chat-App-Project-64-qE1o67DpFGC
+
+Trello
+========
+https://trello.com/b/f4pkPmrx/team-project
+
