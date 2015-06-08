@@ -12,7 +12,7 @@ The app can accessed: http://rdaly1490.github.io/Chatroom/dist/index.html
 * URL Extensions for methods:
 
 * leaderboard:  get "https://warm-meadow-2141.herokuapp.com/messages/leaderboard"
-recently active users:  get "https://warm-meadow-2141.herokuapp.com/messages/recent_users"
+* recently active users:  get "https://warm-meadow-2141.herokuapp.com/messages/recent_users"
 * most active chatrooms:  get "https://warm-meadow-2141.herokuapp.com/messages/active_chatrooms"
 * messages in the last 5 minutes organized by chatroom:  get "https://warm-meadow-2141.herokuapp.com/messages/:chatroom"
 * all messages sent by a specific username:  get "https://warm-meadow-2141.herokuapp.com/messages/profile/:username"
